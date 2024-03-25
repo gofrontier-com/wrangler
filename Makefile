@@ -1,8 +1,8 @@
 build:
-	go build cmd/vertag/vertag.go
+	go build cmd/wrangler/wrangler.go
 
 install:
-	go install cmd/vertag/vertag.go
+	go install cmd/wrangler/wrangler.go
 
 test:
 	go test -v ./...
