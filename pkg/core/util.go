@@ -1,11 +1,35 @@
 package core
 
 import (
+	"fmt"
 	"io"
 	"os"
 	"path"
 	"strings"
 )
+
+func FindInSlice[K comparable](arr []K, comparer func(K) bool) (K, bool) {
+	var result K
+	found := false
+	for _, cur := range arr {
+		if comparer(cur) {
+			found = true
+			result = cur
+			break
+		}
+	}
+	return result, found
+}
+
+func FindAllInSlice[K comparable](arr []K, comparer func(K) bool) ([]K, bool) {
+	var results []K
+	for _, cur := range arr {
+		if comparer(cur) {
+			results = append(results, cur)
+		}
+	}
+	return results, len(results) > 0
+}
 
 func removeFromSlice(s []string, r string) []string {
 	for i, v := range s {
@@ -57,4 +81,19 @@ func getVersion(dir string) (string, error) {
 	retval := strings.TrimSuffix(string(bytes), "\n")
 
 	return retval, nil
+}
+
+func FormatCurrency(value float64, currency Currency) string {
+	return FormatCurrencyWithPrecision(value, currency, 2)
+}
+
+func FormatCurrencyWithPrecision(value float64, currency Currency, decimals int) string {
+	symbol := currencySymbols[currency]
+	precisionFormat := fmt.Sprintf("%%.%df", decimals)
+	formattedValue := fmt.Sprintf(precisionFormat, value)
+	if symbol == "" && currency != "" {
+		return fmt.Sprintf("%s %s", formattedValue, currency)
+	} else {
+		return fmt.Sprintf("%s%s", symbol, formattedValue)
+	}
 }

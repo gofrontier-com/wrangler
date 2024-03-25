@@ -3,7 +3,7 @@
 .vscode
 
 # go
-/vertag
+/wrangler
 
 # other
 dist/

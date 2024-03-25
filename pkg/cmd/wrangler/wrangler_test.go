@@ -1,4 +1,4 @@
-package vertag
+package wrangler
 
 import (
 	"testing"
@@ -7,7 +7,7 @@ import (
 func TestNewCmdRoot(t *testing.T) {
 	cmd := NewRootCmd("0.0.0", "commitid", "date")
 
-	if cmd.Use != "vertag" {
+	if cmd.Use != "wrangler" {
 		t.Errorf("Use is not correct")
 	}
 }
