@@ -35,10 +35,10 @@ By default Wrangler will attempt to read data from the CLI standard input in CSV
 - **currency** - Optional, if specified then only budgets or rules of qualifying currencies will apply (ISO-4217 code)
 - **category** - Optional, if specified can be used to group budgets / rules (any)
 
-Data can also be consumed through a `custom provider <#providers>`_. If you want to disable the default
-behaviour use the ``--no-stdin`` flag.
+Data can also be consumed through a `custom provider <#providers>`_. If you wish to disable the default
+behaviour then you can pass the ``--no-stdin`` flag.
 
-Some examples of the types of use-cases Wrangler can be used for are:
+Some examples of the types of use-cases Wrangler can cover with the relevant data are:
 
 - Flagging over and underspend of resources
 - Forecasting future overspend
