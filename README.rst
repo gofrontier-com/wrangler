@@ -53,6 +53,43 @@ Custom providers
 
 TODO
 
+-----
+Usage
+-----
+
+.. code:: bash
+
+  $ wrangler --help
+    Wrangler is a command line tool for cost management.
+
+    Usage:
+      wrangler [flags]
+
+    Flags:
+      -c, --config string   configuration file (default "/Users/jameshowe/Desktop/frontier/wrangler/.wrangler.yaml")
+      -h, --help            help for wrangler
+          --no-stdin        disable reading data from stdin
+      -v, --verbose         Verbose logging
+          --version         version for wrangler
+
+Stream data from standard input:
+
+.. code:: bash
+
+    $ echo "..." | wrangler
+
+Stream data from a file:
+
+.. code:: bash
+
+    $ cat costdata.csv | wrangler
+
+Disable streaming:
+
+.. code:: bash
+
+    $ wrangler --no-stdin
+
 -------------
 Configuration
 -------------
@@ -173,41 +210,6 @@ Download
 --------
 
 Binaries and packages of the latest stable release are available at `https://github.com/gofrontier-com/wrangler/releases <https://github.com/gofrontier-com/wrangler/releases>`_.
-
------
-Usage
------
-
-.. code:: bash
-
-  $ wrangler --help
-    WWrangler is a command line tool for cost management.
-
-    Usage:
-      wrangler [flags]
-
-    Flags:
-      -c, --config string   configuration file (default "<cwd>/.wrangler.yaml")
-      -h, --help            help for wrangler
-      -v, --version         version for wrangler
-
-Stream data from standard input:
-
-.. code:: bash
-
-    $ echo "..." | wrangler
-
-Stream data from a file:
-
-.. code:: bash
-
-    $ cat costdata.csv | wrangler
-
-Disable streaming:
-
-.. code:: bash
-
-    $ wrangler --no-stdin
 
 ------------
 Contributing
