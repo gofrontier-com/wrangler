@@ -18,8 +18,7 @@ About
 
 Wrangler was built to simplify cloud cost management. In the world of distributed cloud applications, 
 tracking costs can be challenging. With Wrangler, teams gain control and visibility over costs by
-centralising budget configuration, streamling trigger rules and executing configurable actions when 
-thresholds are reached.
+centralising budget configuration and triggering configurable actions when thresholds are reached.
 
 Consuming data
 ##############
